@@ -12,6 +12,26 @@ spec:
     version: v1.2.0
   - function: xpkg.upbound.io/crossplane-contrib/function-auto-ready
     version: '>=v0.0.0'
+  - provider: xpkg.upbound.io/upbound/provider-family-aws
+    version: v1.17.0
+  - provider: xpkg.upbound.io/upbound/provider-family-gcp
+    version: v1.10.0
+  - provider: xpkg.upbound.io/upbound/provider-family-azure
+    version: v1.9.0
+  - provider: xpkg.upbound.io/upbound/provider-helm
+    version: v0.20.0
+  - provider: xpkg.upbound.io/upbound/provider-kubernetes
+    version: v0.16.0
+  - provider: xpkg.upbound.io/upbound/provider-terraform
+    version: v0.19.0
+  - provider: xpkg.upbound.io/civo/provider-civo
+    version: v0.1
+  - provider: xpkg.upbound.io/cilium/provider-cilium
+    version: v0.0.3
+  - provider: xpkg.upbound.io/crossplane-contrib/provider-argocd
+    version: v0.9.1
+  - provider: xpkg.upbound.io/digitalocean/provider-digitalocean
+    version: v0.2.0
   description: This is where you can describe your project.
   license: Apache-2.0
   maintainer: Tapas Jena <tapas.jena@anitechcs.com>
