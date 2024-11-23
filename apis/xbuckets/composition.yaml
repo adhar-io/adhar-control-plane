@@ -1,0 +1,23 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xbuckets.platform.adhar.io
+spec:
+  compositeTypeRef:
+    apiVersion: platform.adhar.io/v1alpha1
+    kind: XBucket
+  mode: Pipeline
+  pipeline:
+  - functionRef:
+      name: adhar-io-adhar-control-planetest-function
+    step: test-function
+  - functionRef:
+      name: crossplane-contrib-function-status-transformer
+    input:
+      apiVersion: function-status-transformer.fn.crossplane.io/v1beta1
+      kind: StatusTransformation
+      metadata: {}
+    step: crossplane-contrib-function-status-transformer
+  - functionRef:
+      name: crossplane-contrib-function-auto-ready
+    step: crossplane-contrib-function-auto-ready

@@ -3,10 +3,19 @@ kind: Project
 metadata:
   name: adhar-control-plane
 spec:
+  dependsOn:
+  - provider: xpkg.upbound.io/upbound/provider-aws-s3
+    version: v1.16.0
+  - function: xpkg.upbound.io/crossplane-contrib/function-status-transformer
+    version: v0.4.0
+  - configuration: xpkg.upbound.io/upbound/platform-ref-aws
+    version: v1.2.0
+  - function: xpkg.upbound.io/crossplane-contrib/function-auto-ready
+    version: '>=v0.0.0'
   description: This is where you can describe your project.
   license: Apache-2.0
-  maintainer: Upbound User <user@example.com>
+  maintainer: Tapas Jena <tapas.jena@anitechcs.com>
   readme: |
     This is where you can add a readme for your project.
-  repository: xpkg.upbound.io/<YOUR ORGANIZATION>/adhar-control-plane
+  repository: xpkg.upbound.io/adhar-io/adhar-control-plane
   source: github.com/upbound/project-template

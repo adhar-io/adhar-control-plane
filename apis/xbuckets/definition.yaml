@@ -1,0 +1,31 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xbuckets.platform.adhar.io
+spec:
+  claimNames:
+    kind: Bucket
+    plural: buckets
+  group: platform.adhar.io
+  names:
+    categories:
+    - crossplane
+    kind: XBucket
+    plural: xbuckets
+  versions:
+  - name: v1alpha1
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        description: Bucket is the Schema for the Bucket API.
+        properties:
+          spec:
+            description: BucketSpec defines the desired state of Bucket.
+            type: object
+          status:
+            description: BucketStatus defines the observed state of Bucket.
+            type: object
+        required:
+        - spec
+        type: object
+    served: true

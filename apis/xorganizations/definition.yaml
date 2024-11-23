@@ -1,0 +1,31 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xorganizations.platform.adhar.io
+spec:
+  claimNames:
+    kind: Organization
+    plural: organizations
+  group: platform.adhar.io
+  names:
+    categories:
+    - crossplane
+    kind: XOrganization
+    plural: xorganizations
+  versions:
+  - name: v1alpha1
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        description: Organization is the Schema for the Organization API.
+        properties:
+          spec:
+            description: OrganizationSpec defines the desired state of Organization.
+            type: object
+          status:
+            description: OrganizationStatus defines the observed state of Organization.
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
